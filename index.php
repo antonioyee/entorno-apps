@@ -12,13 +12,6 @@
         <![endif]-->
         <!-- Le styles -->
         <link href="apps/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-        .navbar-static-top {
-        margin-bottom: 19px;
-        }
-        </style>
-        <script src="apps/js/jquery-1.11.2.min.js"></script>
-        <script src="apps/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-static-top">
@@ -35,28 +28,27 @@
                 </div>
             </div>
         </div>
-
-
         <div id="contenedor-principal" class="container-fluid">
+            <div class="row">
+                <?php
+                    $directorio = opendir("."); // directorio localhost
+                    while ( $archivo = readdir($directorio) ) { // listado del directorio ?>
+                        <?php if ( is_dir($archivo) ): // solo directorios (apps) ?>
+                            <?php if ( $archivo != '.' && $archivo != '..' && $archivo != '.git' && $archivo != 'apps' ): // excluir del listado ?>
 
-        	<?php
-				$directorio = opendir("."); //ruta actual
+                                <div class="col-sm-3">
+                                    <div class="well text-center">
+                                        <span class="glyphicon glyphicon-hdd" aria-hidden="true" style="font-size:30pt;"></span>
+                                        <br>
+                                        <a href="http://localhost/<?= $archivo ?>" target="_blank"><kbd><?= $archivo ?></kbd></a>
+                                    </div>
+                                </div>
 
-				while ($archivo = readdir($directorio)){ //obtenemos un archivo y luego otro sucesivamente
-
-				    if (is_dir($archivo)) { //verificamos si es o no un directorio
-			
-				        //echo "[".$archivo . "]<br />"; //de ser un directorio lo envolvemos entre corchetes
-
-				        echo '<a href="http://localhost/' . $archivo . '" target="_blank">' . $archivo . '</a><br/>';
-				    }else{
-				        //echo $archivo . "<br />";
-				    }
-				}
-			?>
-
+                            <?php endif ?>
+                        <?php endif ?>
+                    <?php }
+                ?>
+            </div>
         </div>
-
-
     </body>
 </html>
