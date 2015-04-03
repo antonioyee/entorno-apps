@@ -22,7 +22,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost">ENTONO DE APPS - YEE</a>
+                    <a class="navbar-brand" href="http://localhost">ENTONO APPS - YEE</a>
                 </div>
                 <div class="navbar-collapse collapse">
                 </div>
