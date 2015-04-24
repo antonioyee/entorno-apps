@@ -34,7 +34,7 @@
                     $directorio = opendir("."); // directorio localhost
                     while ( $archivo = readdir($directorio) ) { // listado del directorio ?>
                         <?php if ( is_dir($archivo) ): // solo directorios (apps) ?>
-                            <?php if ( $archivo != '.' && $archivo != '..' && $archivo != '.git' && $archivo != 'apps' ): // excluir del listado ?>
+                            <?php if ( $archivo != '.' && $archivo != '..' && $archivo != '.git' && $archivo != 'apps' && $archivo != 'phpMyAdmin' ): // excluir del listado ?>
 
                                 <div class="col-sm-3">
                                     <div class="well text-center">
