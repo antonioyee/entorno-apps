@@ -36,11 +36,11 @@
                         <?php if ( is_dir($archivo) ): // solo directorios (apps) ?>
                             <?php if ( $archivo != '.' && $archivo != '..' && $archivo != '.git' && $archivo != 'apps' && $archivo != 'phpMyAdmin' ): // excluir del listado ?>
 
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     <div class="well text-center">
                                         <span class="glyphicon glyphicon-hdd" aria-hidden="true" style="font-size:30pt;"></span>
                                         <br>
-                                        <a href="http://localhost/<?= $archivo ?>" target="_blank"><kbd><?= $archivo ?></kbd></a>
+                                        <a href="http://localhost/<?= $archivo ?>" target="_blank" style="text-decoration:none"><kbd><?= $archivo ?></kbd></a>
                                     </div>
                                 </div>
 
